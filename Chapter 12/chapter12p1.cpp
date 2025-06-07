@@ -3,7 +3,6 @@
 /*
 Lessons covered - 12.1 - 12.9
 Topics covered, lvalues and rvalues - what they are, lvalue references, pointer basics
-
 6/6/25
 */
 
