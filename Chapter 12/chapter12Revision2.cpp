@@ -78,7 +78,7 @@ void address(const int* number) {
 }
 
 const int& ref() {
-    const static int number {10};
+    static const int number {10};
 
     return number;
 
