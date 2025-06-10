@@ -13,5 +13,8 @@ Topics covered are: lvalues and rvalues, lvalue reference, pointers and null poi
 ### Chapter 14
 Topics covered are: Classes, member functions, access specifiers and access functions
 
+### Chapter 16
+Topics covered are: for-each loops with std::vector, resizing std::vector, std::vector stack behavior
+
 
 

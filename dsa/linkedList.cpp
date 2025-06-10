@@ -1,5 +1,7 @@
 #include <iostream>
 
+#define PASS
+
 template <typename T>
 class Node {
     private:
@@ -46,14 +48,86 @@ class Node {
 
 };
 
+template <typename T>
+class LinkedList {
+    private:
+        Node<T>* m_head{}; // the number of elements
+        int m_size{}; // the size of the linked list
+    
+    public:
+        LinkedList(Node<T>* head=nullptr) 
+            : m_head{head}{
+                if (m_head) {
+                    m_size = 1;
+                } else {
+                    m_size = 0;
+                }
+
+            }
+               
+        
+        
+        void add(T value){
+            // creating a new node
+             Node<T> newNode = new Node{value};
+
+
+
+            if (m_head) {
+                // create a new node and add it to the linked list
+                m_head->setNode(&newNode);
+
+            } else {
+                Node<T> newNode = new Node{value};
+                m_head = newNode;
+            }
+
+            m_size++;
+
+
+        }
+
+        void size() { // return by value since an int is cheap to copy
+            PASS;
+        }
+
+        void remove() {
+            PASS;
+        }
+
+        void print() {
+            Node<T>* currentNode{&m_head};
+            while(currentNode) {
+                std::cout << currentNode->print() << "\n";
+                currentNode = &currentNode->getNode()
+            }
+
+        }
+
+        void isEmpty() {
+            PASS;
+
+        }
+
+        const T& front() const {
+            return m_head->getValue();
+            
+        
+
+        }
+
+};
 
 
 int main()  {
-
     Node<int> node{10};
-    Node<int> node2{11, &node};
+    LinkedList<int> linkedList{&node};
 
-    node2.print();
+    std::cout << linkedList.front() << "\n";
+    linkedList.print();
+
+
+   
 
 
     return 0;
