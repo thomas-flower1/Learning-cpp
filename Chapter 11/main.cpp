@@ -52,6 +52,20 @@ void error(int x, int y = 10) {
 
 }
 
+template <typename T>
+T min(T x, T y){
+    return (x < y) ? x : y;
+}
+
+// we can also use templates to have 2 seperate values
+template <typename T, typename U>
+auto max(T x, U y){
+    return (x < y) ? y : x;
+} 
+
+
+// if using cpp 20 we can just use auto everywhere
+
 
 int main() {
 
@@ -120,6 +134,24 @@ int main() {
     // example:
 
     // error(10); // which does this match to?
+
+    // Lesson 11.6 Function Templates
+
+    // lets use the example to create a min function using templates
+    // now lets try envoke the function
+    const int a = 10;
+    const int b = 11;
+
+    std::cout << "Which is smaller: a " << a << " or b: " << b << " " << min(a, b) << "\n";
+
+
+    // 11.8
+    // if we want to use templates with multiple types we can do that
+    // be careful for the return type, could run into narrowing
+    auto val {max<int, double>(10, 12.34)};
+    std::cout << val << "\n";
+
+
 
 
 
